@@ -2,6 +2,141 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Lato";
+}
+
+body {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+header .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header .logo img {
+  width: 50px;
+}
+header .logo h1 {
+  font-family: "DM+Sans";
+  color: #D04F4F;
+  font-size: 36px;
+  font-weight: 700;
+}
+header nav {
+  width: 100%;
+  margin-top: 1rem;
+}
+header nav .search-bar {
+  position: relative;
+}
+header nav .search-bar #search {
+  outline: none;
+  background-color: #E7E7E7;
+  border-radius: 5px;
+  padding: 1rem;
+  padding-right: 4rem;
+  width: 100%;
+  border: none;
+  font-size: 18px;
+}
+header nav .search-bar #search::placeholder {
+  color: #aaa;
+}
+header nav .search-bar #search-submit {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background-color: transparent;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+header nav .search-bar #search-submit img {
+  width: 32px;
+}
+header nav .filters {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin-top: 4rem;
+}
+header nav .filters input {
+  position: relative;
+  padding: 1.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+  width: 170px;
+}
+header nav .filters input::placeholder {
+  color: #fff;
+}
+header nav .filters #ingredients {
+  background-color: #3282F7;
+}
+header nav .filters #devices {
+  background-color: #68D9A4;
+}
+header nav .filters #utensils {
+  background-color: #ED6454;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+main article {
+  width: 380px;
+  height: 364px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+main article .top {
+  background-color: #C7BEBE;
+  height: 40%;
+}
+main article .content {
+  background-color: #E7E7E7;
+  padding: 1rem;
+}
+main article .content div {
+  display: flex;
+  justify-content: space-between;
+}
+main article .content div:last-child {
+  margin-top: 1rem;
+}
+main article .content h2 {
+  font-size: 18px;
+  font-weight: 400;
+}
+main article .content .clock {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+main article .content .clock img {
+  margin-right: 0.5rem;
+}
+main article .content ul {
+  width: 50%;
+  list-style-type: none;
+  font-size: 12px;
+}
+main article .content ul span {
+  font-weight: 700;
+}
+main article .content p {
+  width: 50%;
+  font-size: 12px;
 }
 
 /*# sourceMappingURL=style.css.map */
