@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Lato:wght@400;700&family=Nunito:wght@200;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/models/Recipes.js" defer></script>
+    <script src="./js/factorys/RecipesFactory.js" defer></script>
+    <script src="./js/templates/RecipeCard.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
 
@@ -30,15 +33,15 @@
             </div>
 
             <div class="filters">
-                <input type="text" placeholder="Ingredients" id="ingredients">
-                <input type="text" placeholder="Appareils" id="devices">
-                <input type="text" placeholder="Ustensiles" id="utensils">
+                <div id="ingredients">Ingrédients</div>
+                <div id="devices">Appareils</div>
+                <div id="utensils">Ustensiles</div>
             </div>
         </nav>
     </header>
 
     <main>
-        <article>
+        <!-- <article>
             <div class="top"></div>
             <div class="content">
                 <div>
@@ -71,7 +74,7 @@
                     </p>
                 </div>
             </div>
-        </article>
+        </article> -->
     </main>
 </body>
 
