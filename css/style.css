@@ -64,7 +64,7 @@ header nav .filters {
   width: 50%;
   margin-top: 4rem;
 }
-header nav .filters input {
+header nav .filters div {
   position: relative;
   padding: 1.5rem 1rem;
   border-radius: 5px;
@@ -74,7 +74,7 @@ header nav .filters input {
   outline: none;
   width: 170px;
 }
-header nav .filters input::placeholder {
+header nav .filters div::placeholder {
   color: #fff;
 }
 header nav .filters #ingredients {
