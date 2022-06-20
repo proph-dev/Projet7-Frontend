@@ -1,23 +1,29 @@
 class App {
-    getRecipes = async () => {
-        const response = await fetch('./data/recipes.json')
-        const recipesList = await response.json();
-        return recipesList;
+    recipesWrapper;
+    recipesList;
+    constructor () {
+        this.recipesWrapper = document.querySelector("main");
     }
     
-    displayData = async (recipesList) => {
-        const recipesSection = document.querySelector("main");
+    getRecipes = async () => {
+        const response = await fetch('./data/recipes.json')
+        const recipes = await response.json();
+        this.recipesList = recipes.map(recipe => new RecipeFactory(recipe));
+    }
     
-        recipesList.forEach((recipeList) => {
-            const model = new RecipeFactory(recipeList).createRecipeModel();
-            recipesSection.appendChild(new RecipeCard(model).createRecipeCard());
-        });
-    };
-
     run = async () => {
-        const recipes = await this.getRecipes();
+        await this.getRecipes();
 
-        await this.displayData(recipes);
+        this.recipesSubject = new RecipesSubject();
+        this.recipesObserver = new RecipesObserver(this.recipesList);
+        this.recipesSubject.subscribe(this.recipesObserver);
+
+        const SearchForm = new MainSearchForm(this.recipesSubject);
+        SearchForm.build();
+
+        this.recipesList.forEach(recipe => {
+            this.recipesWrapper.appendChild(new RecipeCard(recipe).createRecipeCard());
+        })
     }
 }
 

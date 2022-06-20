@@ -98,6 +98,7 @@ main article {
   height: 364px;
   border-radius: 5px;
   overflow: hidden;
+  margin-bottom: 3rem;
 }
 main article .top {
   background-color: #C7BEBE;
@@ -106,25 +107,33 @@ main article .top {
 main article .content {
   background-color: #E7E7E7;
   padding: 1rem;
+  height: 60%;
 }
 main article .content div {
   display: flex;
   justify-content: space-between;
 }
-main article .content div:last-child {
+main article .content div:first-child {
+  height: 20%;
+}
+main article .content .cardList {
   margin-top: 1rem;
+  height: 70%;
 }
 main article .content h2 {
   font-size: 18px;
   font-weight: 400;
+  width: 75%;
 }
-main article .content .clock {
+main article .content .div-clock {
   display: flex;
   align-items: center;
-  font-weight: 700;
 }
-main article .content .clock img {
+main article .content .div-clock img {
   margin-right: 0.5rem;
+}
+main article .content .div-clock .clock {
+  font-weight: 700;
 }
 main article .content ul {
   width: 50%;
@@ -137,6 +146,7 @@ main article .content ul span {
 main article .content p {
   width: 50%;
   font-size: 12px;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */
