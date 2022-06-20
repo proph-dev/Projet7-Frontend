@@ -15,6 +15,9 @@
     <script src="./js/models/Recipes.js" defer></script>
     <script src="./js/factorys/RecipesFactory.js" defer></script>
     <script src="./js/templates/RecipeCard.js" defer></script>
+    <script src="./js/filtering/RecipesObserver.js" defer></script>
+    <script src="./js/filtering/RecipesSubject.js" defer></script>
+    <script src="./js/MainSearchForm.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
 
@@ -25,12 +28,7 @@
             <h1>Les petits plats</h1>
         </div>
         <nav>
-            <div class="search-bar">
-                <input type="text" placeholder="Rechercher une recette" name="search" id="search">
-                <button id="search-submit">
-                <img src="./img/icons/search.svg" alt="Rechercher une recette">
-            </button>
-            </div>
+            <div class="search-bar"></div>
 
             <div class="filters">
                 <div id="ingredients">Ingrédients</div>

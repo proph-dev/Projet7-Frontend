@@ -99,6 +99,7 @@ main {
         height: 364px;
         border-radius: 5px;
         overflow: hidden;
+        margin-bottom: 3rem;
         .top {
             background-color: #C7BEBE;
             height: 40%;
@@ -106,23 +107,31 @@ main {
         .content {
             background-color: #E7E7E7;
             padding: 1rem;
+            height: 60%;
             div {
                 display: flex;
                 justify-content: space-between;
             }
-            div:last-child {
+            div:first-child {
+                height: 20%;
+            }
+            .cardList {
                 margin-top: 1rem;
+                height: 70%;
             }
             h2 {
                 font-size: 18px;
                 font-weight: 400;
+                width: 75%;
             }
-            .clock {
+            .div-clock {
                 display: flex;
                 align-items: center;
-                font-weight: 700;
                 img {
                     margin-right: .5rem;
+                }
+                .clock {
+                    font-weight: 700;
                 }
             }
             ul {
@@ -136,6 +145,7 @@ main {
             p {
                 width: 50%;
                 font-size: 12px;
+                overflow: hidden;
             }
         }
     }
