@@ -143,10 +143,12 @@ main article .content ul {
 main article .content ul span {
   font-weight: 700;
 }
-main article .content p {
+main article .content .paragraph {
   width: 50%;
   font-size: 12px;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /*# sourceMappingURL=style.css.map */

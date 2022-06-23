@@ -32,7 +32,8 @@ class RecipeCard {
         cardList.classList.add('cardList')
         let cardUl = document.createElement('ul');
         let cardLi = document.createElement('li');
-        let cardExplication = document.createElement('p');
+        let cardExplication = document.createElement('div');
+        cardExplication.classList.add('paragraph');
 
         
         // appendChilds

@@ -76,13 +76,16 @@ header {
                     color: #fff;
                 }
             }
-            #ingredients {
+            #ingredients,
+            .inputIngredient {
                 background-color: #3282F7;
             }
-            #devices {
+            #devices,
+            .inputDevices {
                 background-color: #68D9A4;
             }
-            #utensils {
+            #ustensils,
+            .inputUstensils {
                 background-color: #ED6454;
             }
         }
@@ -142,10 +145,12 @@ main {
                     font-weight: 700;
                 }
             }
-            p {
+            .paragraph {
                 width: 50%;
                 font-size: 12px;
                 overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
             }
         }
     }
