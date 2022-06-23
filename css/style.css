@@ -77,13 +77,16 @@ header nav .filters div {
 header nav .filters div::placeholder {
   color: #fff;
 }
-header nav .filters #ingredients {
+header nav .filters #ingredients,
+header nav .filters .inputIngredient {
   background-color: #3282F7;
 }
-header nav .filters #devices {
+header nav .filters #devices,
+header nav .filters .inputDevices {
   background-color: #68D9A4;
 }
-header nav .filters #utensils {
+header nav .filters #ustensils,
+header nav .filters .inputUstensils {
   background-color: #ED6454;
 }
 

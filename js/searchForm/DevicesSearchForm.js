@@ -12,16 +12,16 @@ class DevicesSearchForm extends AbstractSearchForm {
     }
 
     build = () => {
-        this.wrapper.innerHTML = `
+        this.wrapper.innerHTML += `
         <div id="devices">Appareils</div>
     `;
 
     document.getElementById('devices').addEventListener('click', () => {
-        document.getElementById('devices').remove();
-        let inputDevices = document.createElement('input');
-        inputDevices.classList.add('inputDevices');
-    });
+        document.getElementById('devices').style.display = "none"
+        const inputDevices = document.createElement('input').classList.add('inputDevices');
+        this.wrapper.appendChild(inputDevices)
 
-    this.onChange();
+        this.onChange();
+    });
     }
 }

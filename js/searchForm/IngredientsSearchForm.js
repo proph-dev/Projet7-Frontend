@@ -12,16 +12,17 @@ class IngredientsSearchForm extends AbstractSearchForm {
     }
 
     build = () => {
-        this.wrapper.innerHTML = `
+        this.wrapper.innerHTML += `
         <div id="ingredients">Ingrédients</div>
     `;
 
     document.getElementById('ingredients').addEventListener('click', () => {
-        document.getElementById('ingredients').remove();
-        let inputIngredient = document.createElement('input');
-        inputIngredient.classList.add('inputIngredient');
+        document.getElementById('ingredients').style.display = "none"
+        const inputIngredient = document.createElement('input').classList.add('inputIngredient');
+        this.wrapper.appendChild(inputIngredient)
+
+        this.onChange();
     });
 
-    this.onChange();
     }
 }

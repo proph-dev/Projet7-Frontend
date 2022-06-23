@@ -20,10 +20,13 @@ class App {
 
         const SearchForm = new MainSearchForm(this.recipesSubject);
         SearchForm.build();
+
         const IngredientsSearch = new IngredientsSearchForm(this.recipesSubject);
         IngredientsSearch.build();
+
         const UstensilsSearch = new UstensilsSearchForm(this.recipesSubject);
         UstensilsSearch.build();
+        
         const DevicesSearch = new DevicesSearchForm(this.recipesSubject);
         DevicesSearch.build();
 

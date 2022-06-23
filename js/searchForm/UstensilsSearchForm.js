@@ -12,16 +12,18 @@ class UstensilsSearchForm extends AbstractSearchForm {
     }
 
     build = () => {
-        this.wrapper.innerHTML = `
+        this.wrapper.innerHTML += `
         <div id="ustensils">Ustensiles</div>
     `;
 
     document.getElementById('ustensils').addEventListener('click', () => {
-        document.getElementById('ustensils').remove();
-        let inputUstensils = document.createElement('input');
-        inputUstensils.classList.add('inputUstensils');
+        document.getElementById('ustensils').style.display = "none"
+        const inputUstensils = document.createElement('input').classList.add('inputUstensils');
+        this.wrapper.appendChild(inputUstensils)
+
+        this.onChange();
     });
 
-    this.onChange();
+    
     }
 }
