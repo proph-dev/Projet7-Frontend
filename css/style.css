@@ -78,7 +78,7 @@ header nav .filters div::placeholder {
   color: #fff;
 }
 header nav .filters #ingredients,
-header nav .filters .inputIngredient {
+header nav .filters .inputIngredients {
   background-color: #3282F7;
 }
 header nav .filters #devices,
@@ -88,6 +88,14 @@ header nav .filters .inputDevices {
 header nav .filters #ustensils,
 header nav .filters .inputUstensils {
   background-color: #ED6454;
+}
+header nav .filters input {
+  outline: none;
+  border: none;
+  font-size: 12px;
+}
+header nav .filters input::placeholder {
+  color: #ccc;
 }
 
 main {

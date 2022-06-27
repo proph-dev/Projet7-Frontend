@@ -13,15 +13,22 @@ class IngredientsSearchForm extends AbstractSearchForm {
 
     build = async () => {
         const ingredientsDiv = document.createElement('div');
+        const ingredientSpan = document.createElement('span');
+        ingredientsDiv.appendChild(ingredientSpan);
         ingredientsDiv.id = "ingredients";
-        ingredientsDiv.innerText = 'Ingrédients';
+        ingredientSpan.innerText = 'Ingrédients';
         
         ingredientsDiv.addEventListener('click', () => {
-            ingredientsDiv.style.display = "none"
-            const inputIngredients = document.createElement('input').classList.add('inputIngredients');
-            ingredientsDiv.appendChild(inputIngredients)
-    
-            this.onChange();
+            ingredientSpan.style.display = "none"
+            const inputIngredients = document.createElement('input');
+            inputIngredients.placeholder = "Rechercher un ingrédient"
+
+            if(!ingredientsDiv.querySelector('input')) {
+                inputIngredients.classList.add('inputIngredients');
+                ingredientsDiv.appendChild(inputIngredients)
+
+                this.onChange();
+            }
         })
         this.wrapper.appendChild(ingredientsDiv);
     }

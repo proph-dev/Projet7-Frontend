@@ -18,11 +18,12 @@
             },
             {
                 "ingredient": "Sucre",
-                "quantite": 30,
+                "quantity": 30,
                 "unit": "grammes"
             },
             {
-                "ingredient": "Glaçons"
+                "ingredient": "Glaçons",
+                "quantity": 2
             }
         ],
         "time": 10,
@@ -49,7 +50,7 @@
             },
             {
                 "ingredient": "Carotte",
-                "quantite": 1
+                "quantity": 1
             },
             {
                 "ingredient": "Citron Vert",
@@ -302,13 +303,16 @@
                 "unit": "grammes"
             },
             {
-                "ingredient": "Vinaigre Balsamic"
+                "ingredient": "Vinaigre Balsamic",
+                "quantity": 2
             },
             {
-                "ingredient": "Huile d'olive"
+                "ingredient": "Huile d'olive",
+                "quantity": 3
             },
             {
-                "ingredient": "Basilic"
+                "ingredient": "Basilic",
+                "quantity": 4
             }
         ],
         "time": 15,
