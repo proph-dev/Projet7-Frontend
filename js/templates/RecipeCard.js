@@ -31,7 +31,6 @@ class RecipeCard {
         let cardList = document.createElement('div');
         cardList.classList.add('cardList')
         let cardUl = document.createElement('ul');
-        let cardLi = document.createElement('li');
         let cardExplication = document.createElement('div');
         cardExplication.classList.add('paragraph');
 
@@ -48,7 +47,6 @@ class RecipeCard {
         divClock.appendChild(cardClock);
 
         cardList.appendChild(cardUl);
-        cardUl.appendChild(cardLi);
         cardList.appendChild(cardExplication);
 
 
@@ -58,7 +56,27 @@ class RecipeCard {
         cardClockImg.src = "~/img/icons/clock.svg";
         cardClockImg.alt = "Horloge";
 
-        cardExplication.textContent = this.recipeData.description;
+
+        for(let i = 0; i < this.recipeData.ingredients.length; i++) {
+            let cardLi = document.createElement('li');
+            const ingredientsInfo = this.recipeData.ingredients[i];
+
+            cardLi.innerHTML = `
+            <p class="ingredientsName">
+                ${ingredientsInfo.ingredient}:
+                <span>${ingredientsInfo.quantity}${ingredientsInfo.unit ? ingredientsInfo.unit : ""}</span>
+            </p>
+            `;
+            cardUl.appendChild(cardLi);
+        }
+
+        if(this.recipeData.description.length > 200) {
+            cardExplication.textContent = this.recipeData.description.substring(0,200) + "...";
+        } else {
+            cardExplication.textContent = this.recipeData.description;
+        }
+        
+        
         return this.$wrapper;
     }
 

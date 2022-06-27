@@ -141,16 +141,16 @@ main {
                 width: 50%;
                 list-style-type: none;
                 font-size: 12px;
-                span {
+                .ingredientsName {
                     font-weight: 700;
+                    span {
+                        font-weight: 400;
+                    }
                 }
             }
             .paragraph {
                 width: 50%;
                 font-size: 12px;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
             }
         }
     }

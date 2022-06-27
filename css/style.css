@@ -143,15 +143,15 @@ main article .content ul {
   list-style-type: none;
   font-size: 12px;
 }
-main article .content ul span {
+main article .content ul .ingredientsName {
   font-weight: 700;
+}
+main article .content ul .ingredientsName span {
+  font-weight: 400;
 }
 main article .content .paragraph {
   width: 50%;
   font-size: 12px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 /*# sourceMappingURL=style.css.map */

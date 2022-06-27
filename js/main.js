@@ -22,13 +22,13 @@ class App {
         SearchForm.build();
 
         const IngredientsSearch = new IngredientsSearchForm(this.recipesSubject);
-        IngredientsSearch.build();
+        await IngredientsSearch.build();
 
         const UstensilsSearch = new UstensilsSearchForm(this.recipesSubject);
-        UstensilsSearch.build();
+        await UstensilsSearch.build();
         
         const DevicesSearch = new DevicesSearchForm(this.recipesSubject);
-        DevicesSearch.build();
+        await DevicesSearch.build();
 
         this.recipesList.forEach(recipe => {
             this.recipesWrapper.appendChild(new RecipeCard(recipe).createRecipeCard());

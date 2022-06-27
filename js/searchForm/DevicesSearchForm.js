@@ -11,17 +11,18 @@ class DevicesSearchForm extends AbstractSearchForm {
         });
     }
 
-    build = () => {
-        this.wrapper.innerHTML += `
-        <div id="devices">Appareils</div>
-    `;
-
-    document.getElementById('devices').addEventListener('click', () => {
-        document.getElementById('devices').style.display = "none"
-        const inputDevices = document.createElement('input').classList.add('inputDevices');
-        this.wrapper.appendChild(inputDevices)
-
-        this.onChange();
-    });
+    build = async () => {
+        const devicesDiv = document.createElement('div');
+        devicesDiv.id = "devices";
+        devicesDiv.innerText = 'Appareils';
+        
+        devicesDiv.addEventListener('click', () => {
+            devicesDiv.style.display = "none"
+            const inputDevices = inputDevices.createElement('input').classList.add('inputDevices');
+            devicesDiv.appendChild(inputIngredients)
+    
+            this.onChange();
+        })
+        this.wrapper.appendChild(devicesDiv);
     }
 }

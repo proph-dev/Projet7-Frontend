@@ -11,18 +11,18 @@ class IngredientsSearchForm extends AbstractSearchForm {
         });
     }
 
-    build = () => {
-        this.wrapper.innerHTML += `
-        <div id="ingredients">Ingrédients</div>
-    `;
-
-    document.getElementById('ingredients').addEventListener('click', () => {
-        document.getElementById('ingredients').style.display = "none"
-        const inputIngredient = document.createElement('input').classList.add('inputIngredient');
-        this.wrapper.appendChild(inputIngredient)
-
-        this.onChange();
-    });
-
+    build = async () => {
+        const ingredientsDiv = document.createElement('div');
+        ingredientsDiv.id = "ingredients";
+        ingredientsDiv.innerText = 'Ingrédients';
+        
+        ingredientsDiv.addEventListener('click', () => {
+            ingredientsDiv.style.display = "none"
+            const inputIngredients = document.createElement('input').classList.add('inputIngredients');
+            ingredientsDiv.appendChild(inputIngredients)
+    
+            this.onChange();
+        })
+        this.wrapper.appendChild(ingredientsDiv);
     }
 }
