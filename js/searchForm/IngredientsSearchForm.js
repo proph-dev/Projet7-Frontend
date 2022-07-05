@@ -4,7 +4,7 @@ class IngredientsSearchForm extends AbstractSearchForm {
             const value = e.target.value;
                 this.subject.fire(
                     {
-                        'type': 'ingredient_search_add',
+                        'type': 'ingredient_search',
                         value
                     }
                 )
@@ -54,10 +54,15 @@ class IngredientsSearchForm extends AbstractSearchForm {
 
             const ingredientsList = document.createElement('ul');
             ingredientsList.classList.add('ingredients-list');
-            const ingredientName = document.createElement('li');
 
             ingredientsDiv.appendChild(ingredientsList);
-            ingredientsList.appendChild(ingredientName);
+
+            for (let ingredientName of ingredientsSet) {
+                const ingredientLi = document.createElement('li');
+                ingredientsList.appendChild(ingredientLi);
+
+                ingredientLi.textContent = ingredientName;
+            }
             
         })
         this.wrapper.appendChild(ingredientsDiv);

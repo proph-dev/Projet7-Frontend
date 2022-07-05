@@ -32,73 +32,27 @@ class RecipesObserver {
                 })
                 break;
             // Ingredients
-            case 'ingredient_search_add':
-                this._listIngredients.push(action.value);
-                this._defaultRecipes.filter(recipe => {
-                    const ingredients = recipe._ingredients.filter(ingredient => ingredient._ingredient === action.value);
-                    let hasResult = false;
-                    if (ingredients.length > 0) {
-                        hasResult = true;
-                    }
+            case 'ingredient_search':
+                const ingredientDOM = document.getElementsByClassName('ingredients-list');
+                const firstIngredient = ingredientDOM[0];
+                
+                for(let li of firstIngredient.children) {
+                    var liContent = li.textContent;
 
-                    if(this._mainSearch.length > 0) {
-                        hasResult = recipe._name.toLowerCase().includes(action.value.toLowerCase() || recipe._description.toLowerCase().includes(action.value.toLowerCase()));
+                    if(this._mainSearch.length > 2) {
+                        if(liContent.toLowerCase().includes(action.value.toLowerCase())) {
+                            li.style.display = 'block';
+                        } else {
+                            li.style.display = 'none';
+                        }
                     }
-
-                    if(hasResult) {
-                        return recipe;
-                    }
-
-                    return false;
-                }).forEach(recipe => {
-                    
-                });
+                }
                 break;
             //Devices 
             case 'devices_search_add':
-                this._listDevices.push(action.value);
-                this._defaultRecipes.filter(recipe => {
-                    const devices = recipe._devices.filter(device => device._device === action.value);
-                    let hasResult = false;
-                    if (devices.length > 0) {
-                        hasResult = true;
-                    }
-
-                    if(this._mainSearch.length > 0) {
-                        hasResult = recipe._name.toLowerCase().includes(action.value.toLowerCase() || recipe._description.toLowerCase().includes(action.value.toLowerCase()));
-                    }
-
-                    if(hasResult) {
-                        return recipe;
-                    }
-
-                    return false;
-                }).forEach(recipe => {
-                    this.recipesWrapper.appendChild(new RecipeCard(recipe).createRecipeCard());
-                });
                 break;
             //Ustensils
             case 'ustensil_search_add':
-                this._listUstensils.push(action.value);
-                this._defaultRecipes.filter(recipe => {
-                    const ustensils = recipe._ustensils.filter(ustensil => ustensil._ustensil === action.value);
-                    let hasResult = false;
-                    if (ustensils.length > 0) {
-                        hasResult = true;
-                    }
-
-                    if(this._mainSearch.length > 0) {
-                        hasResult = recipe._name.toLowerCase().includes(action.value.toLowerCase() || recipe._description.toLowerCase().includes(action.value.toLowerCase()));
-                    }
-
-                    if(hasResult) {
-                        return recipe;
-                    }
-
-                    return false;
-                }).forEach(recipe => {
-                    this.recipesWrapper.appendChild(new RecipeCard(recipe).createRecipeCard());
-                });
                 break;
             case 'ingredient_search_remove':
                 break;
