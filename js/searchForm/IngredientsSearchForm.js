@@ -58,10 +58,24 @@ class IngredientsSearchForm extends AbstractSearchForm {
             ingredientsDiv.appendChild(ingredientsList);
 
             for (let ingredientName of ingredientsSet) {
+                // Je crée un élément li qui sera l'ingrédient (il génère la sélection des filtres possibles)
                 const ingredientLi = document.createElement('li');
                 ingredientsList.appendChild(ingredientLi);
 
+                // Lui donne son nom
                 ingredientLi.textContent = ingredientName;
+
+                // Crée le tag de l'ingrédient sélectionné
+                ingredientLi.addEventListener('click', () => {
+                    const liIngredient = document.createElement('li');
+                    liIngredient.textContent = ingredientName;
+                    this.tags.appendChild(liIngredient);
+
+                    // Supprimer le tag l'ingrédient des filtres
+                    liIngredient.addEventListener('click', () => {
+                        liIngredient.remove();
+                    })
+                })
             }
             
         })

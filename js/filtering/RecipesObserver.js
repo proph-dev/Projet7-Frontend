@@ -27,6 +27,21 @@ class RecipesObserver {
 
                     return hasResult ? recipe : false;
                 })
+                // On récupère tous les tags actifs
+                .filter(recipe => {
+                    const tagIngredient = document.querySelector('.tags');
+                    if(!tagIngredient.children) {
+                        return true;
+                    }
+                    for(let tag of tagIngredient.children) {
+                        var tagContent = tag.textContent;
+
+                        if(!recipe._ingredients.includes(tagContent)) {
+                            return false;
+                        }
+                    }
+                    return true;
+                })
                 .forEach(recipe => {
                     this.recipesWrapper.appendChild(new RecipeCard(recipe).createRecipeCard());
                 })
@@ -39,12 +54,10 @@ class RecipesObserver {
                 for(let li of firstIngredient.children) {
                     var liContent = li.textContent;
 
-                    if(this._mainSearch.length > 2) {
-                        if(liContent.toLowerCase().includes(action.value.toLowerCase())) {
-                            li.style.display = 'block';
-                        } else {
-                            li.style.display = 'none';
-                        }
+                    if(liContent.toLowerCase().includes(action.value.toLowerCase())) {
+                        li.style.display = 'block';
+                    } else {
+                        li.style.display = 'none';
                     }
                 }
                 break;
