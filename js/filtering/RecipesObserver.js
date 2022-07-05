@@ -51,7 +51,7 @@ class RecipesObserver {
 
                     return false;
                 }).forEach(recipe => {
-                    this.recipesWrapper.appendChild(new RecipeCard(recipe).createRecipeCard());
+                    
                 });
                 break;
             //Devices 

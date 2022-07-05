@@ -21,7 +21,7 @@ class App {
         const SearchForm = new MainSearchForm(this.recipesSubject);
         SearchForm.build();
 
-        const IngredientsSearch = new IngredientsSearchForm(this.recipesSubject);
+        const IngredientsSearch = new IngredientsSearchForm(this.recipesSubject, this.recipesList);
         await IngredientsSearch.build();
 
         const UstensilsSearch = new UstensilsSearchForm(this.recipesSubject);

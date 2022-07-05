@@ -29,7 +29,38 @@ class IngredientsSearchForm extends AbstractSearchForm {
 
                 this.onChange();
             }
+
+            // initialise la liste des ingrédients par rapport aux recettes
+            this._listIngredients = [];
+            const recipesList = this._defaultRecipes.map(recipe => recipe._ingredients);
+            const ingredient = recipesList.map(listIngredients => listIngredients.map(ingredient => ingredient.ingredient))
+
+            const ingredientsSet = new Set();
+
+            // récupère chaque nom d'ingrédient
+            for (let ingredientsList of ingredient) {
+                for(let ingredientName of ingredientsList) {
+                    ingredientsSet.add(ingredientName);
+                }
+            }
+
+            // condition qui supprime le ul s'il existe déjà
+            const ingredientDOM = document.getElementsByClassName('ingredients-list');
+
+            for (let ingredientsList of ingredientDOM) {
+                ingredientsList.remove()
+            }            
+            
+
+            const ingredientsList = document.createElement('ul');
+            ingredientsList.classList.add('ingredients-list');
+            const ingredientName = document.createElement('li');
+
+            ingredientsDiv.appendChild(ingredientsList);
+            ingredientsList.appendChild(ingredientName);
+            
         })
         this.wrapper.appendChild(ingredientsDiv);
+
     }
 }
