@@ -39,3 +39,12 @@ class App {
 
 const app = new App();
 app.run();
+
+
+/* 
+TODOLIST
+- Autocomplete les ingrédients par rapport aux recettes affichées
+- Corriger le fait que quand on écrit dans la recherche de tags les recettes disparaissent
+- Les tags actualisent pas dynamiquement les recettes quand on les ajoute, à corriger
+- Faire en sorte que le tag de filtre avancé se supprime une fois sélectionné
+*/
