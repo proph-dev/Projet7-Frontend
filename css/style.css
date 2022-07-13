@@ -77,14 +77,25 @@ header nav .filters div {
 header nav .filters div::placeholder {
   color: #fff;
 }
-header nav .filters #ingredients {
+header nav .filters #ingredients,
+header nav .filters .inputIngredients {
   background-color: #3282F7;
 }
-header nav .filters #devices {
+header nav .filters #devices,
+header nav .filters .inputDevices {
   background-color: #68D9A4;
 }
-header nav .filters #utensils {
+header nav .filters #ustensils,
+header nav .filters .inputUstensils {
   background-color: #ED6454;
+}
+header nav .filters input {
+  outline: none;
+  border: none;
+  font-size: 12px;
+}
+header nav .filters input::placeholder {
+  color: #ccc;
 }
 
 main {
@@ -140,13 +151,15 @@ main article .content ul {
   list-style-type: none;
   font-size: 12px;
 }
-main article .content ul span {
+main article .content ul .ingredientsName {
   font-weight: 700;
 }
-main article .content p {
+main article .content ul .ingredientsName span {
+  font-weight: 400;
+}
+main article .content .paragraph {
   width: 50%;
   font-size: 12px;
-  overflow: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */

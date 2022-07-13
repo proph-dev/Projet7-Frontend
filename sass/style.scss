@@ -76,15 +76,28 @@ header {
                     color: #fff;
                 }
             }
-            #ingredients {
+            #ingredients,
+            .inputIngredients {
                 background-color: #3282F7;
             }
-            #devices {
+
+            #devices,
+            .inputDevices {
                 background-color: #68D9A4;
             }
-            #utensils {
+            #ustensils,
+            .inputUstensils {
                 background-color: #ED6454;
             }
+            input {
+                outline: none;
+                border: none;
+                font-size: 12px;
+                &::placeholder {
+                    color: #ccc;
+                }
+            }
+
         }
     }
 }
@@ -138,14 +151,16 @@ main {
                 width: 50%;
                 list-style-type: none;
                 font-size: 12px;
-                span {
+                .ingredientsName {
                     font-weight: 700;
+                    span {
+                        font-weight: 400;
+                    }
                 }
             }
-            p {
+            .paragraph {
                 width: 50%;
                 font-size: 12px;
-                overflow: hidden;
             }
         }
     }

@@ -18,6 +18,10 @@
     <script src="./js/filtering/RecipesObserver.js" defer></script>
     <script src="./js/filtering/RecipesSubject.js" defer></script>
     <script src="./js/MainSearchForm.js" defer></script>
+    <script src="./js/searchForm/AbstractSearchForm.js" defer></script>
+    <script src="./js/searchForm/IngredientsSearchForm.js" defer></script>
+    <script src="./js/searchForm/UstensilsSearchForm.js" defer></script>
+    <script src="./js/searchForm/DevicesSearchForm.js" defer></script>
     <script src="./js/main.js" defer></script>
 </head>
 
@@ -30,50 +34,13 @@
         <nav>
             <div class="search-bar"></div>
 
-            <div class="filters">
-                <div id="ingredients">Ingrédients</div>
-                <div id="devices">Appareils</div>
-                <div id="utensils">Ustensiles</div>
-            </div>
+            <ul class="tags"></ul>
+
+            <div class="filters"></div>
         </nav>
     </header>
 
-    <main>
-        <!-- <article>
-            <div class="top"></div>
-            <div class="content">
-                <div>
-                    <h2>Limonade de Coco</h2>
-                    <span class="clock">
-                        <img src="./img/icons/clock.svg" alt="Horloge">
-                        10 min
-                    </span>
-                </div>
-                <div>
-                    <ul>
-                        <li>
-                            <span>Lait de coco:</span> 400ml
-                        </li>
-                        <li>
-                            <span>Jus de citron:</span> 2
-                        </li>
-                        <li>
-                            <span>Crème de coco:</span> 4 cuillères
-                        </li>
-                        <li>
-                            <span>Sucre:</span> 20g
-                        </li>
-                        <li>
-                            <span>Glaçons:</span> 2
-                        </li>
-                    </ul>
-                    <p>
-                        Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée
-                    </p>
-                </div>
-            </div>
-        </article> -->
-    </main>
+    <main></main>
 </body>
 
 </html>

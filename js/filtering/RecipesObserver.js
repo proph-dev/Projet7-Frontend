@@ -4,11 +4,14 @@ class RecipesObserver {
         this._defaultRecipes = defaultRecipes;
         this._mainSearch = '';
         this._listIngredients = [];
+        this._listDevices = [];
+        this._listUstensils = [];
     }
 
     update = (action) => {
         this.recipesWrapper.innerHTML = '';
         switch(action.type) {
+            //Main search
             case 'main_search':
                 this._mainSearch = action.value;
                 this._defaultRecipes.filter(recipe => {
@@ -24,34 +27,44 @@ class RecipesObserver {
 
                     return hasResult ? recipe : false;
                 })
+                // On récupère tous les tags actifs
+                .filter(recipe => {
+                    const tagIngredient = document.querySelector('.tags');
+                    if(!tagIngredient.children) {
+                        return true;
+                    }
+                    for(let tag of tagIngredient.children) {
+                        var tagContent = tag.textContent;
+
+                        if(!recipe._ingredients.includes(tagContent)) {
+                            return false;
+                        }
+                    }
+                    return true;
+                })
                 .forEach(recipe => {
                     this.recipesWrapper.appendChild(new RecipeCard(recipe).createRecipeCard());
                 })
                 break;
-            case 'ingredient_search_add':
-                this._listIngredients.push(action.value);
-                this._defaultRecipes.filter(recipe => {
-                    const ingredients = recipe._ingredients.filter(ingredient => ingredient._ingredient === action.value);
-                    let hasResult = false;
-                    if (ingredients.length > 0) {
-                        hasResult = true;
-                    }
+            // Ingredients
+            case 'ingredient_search':
+                const ingredientDOM = document.getElementsByClassName('ingredients-list');
+                const firstIngredient = ingredientDOM[0];
+                
+                for(let li of firstIngredient.children) {
+                    var liContent = li.textContent;
 
-                    if(this._mainSearch.length > 0) {
-                        hasResult = recipe._name.toLowerCase().includes(action.value.toLowerCase() || recipe._description.toLowerCase().includes(action.value.toLowerCase()));
+                    if(liContent.toLowerCase().includes(action.value.toLowerCase())) {
+                        li.style.display = 'block';
+                    } else {
+                        li.style.display = 'none';
                     }
-
-                    if(hasResult) {
-                        return recipe;
-                    }
-
-                    return false;
-                }).forEach(recipe => {
-                    this.recipesWrapper.appendChild(new RecipeCard(recipe).createRecipeCard());
-                });
+                }
                 break;
+            //Devices 
             case 'devices_search_add':
                 break;
+            //Ustensils
             case 'ustensil_search_add':
                 break;
             case 'ingredient_search_remove':
