@@ -58,10 +58,36 @@ header {
                 }
             }
         }
+        .tags {
+            display: flex;
+            padding-top: 2rem;
+            list-style-type: none;
+            li {
+                color: #fff;
+                text-transform: capitalize;
+                padding: 1rem;
+                border-radius: 5px;
+                margin-right: 1rem;
+                cursor: pointer;
+                &:last-child {
+                    margin-right: 0;
+                }
+                &:hover {
+                    filter: brightness(90%);
+                }
+            }
+            .ingredientTag {
+                background-color: #3282F7;
+            }
+            .ustensilTag {
+                background-color: #ED6454;
+            }
+            .deviceTag {
+                background-color: #68D9A4;
+            }
+        }
         .filters {
             display: flex;
-            justify-content: space-between;
-            width: 50%;
             margin-top: 4rem;
             div {
                 position: relative;
@@ -72,21 +98,29 @@ header {
                 font-size: 18px;
                 outline: none;
                 width: 170px;
+                height: 68px;
+                margin-right: 2rem;
                 &::placeholder {
                     color: #fff;
                 }
+                &:last-child {
+                    margin-right: 0;
+                }
             }
             #ingredients,
-            .inputIngredients {
+            .inputIngredients,
+            .ingredients-list {
                 background-color: #3282F7;
             }
 
             #devices,
-            .inputDevices {
+            .inputDevices,
+            .devices-list {
                 background-color: #68D9A4;
             }
             #ustensils,
-            .inputUstensils {
+            .inputUstensils,
+            .ustensils-list {
                 background-color: #ED6454;
             }
             input {
@@ -98,8 +132,43 @@ header {
                 }
             }
 
+            .ingredients-list,
+            .ustensils-list,
+            .devices-list {
+                list-style-type: none;
+                width: 700px;
+                margin-left: -1rem;
+                padding: 1rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                border-radius: 5px;
+                li {
+                    width: 33%;
+                    margin: .2rem 0;
+                }
+            }
+
+            .tagIngredient,
+            .tagUstensil,
+            .tagDevice {
+                text-transform: capitalize;
+                cursor: pointer;
+                &:hover {
+                    filter: brightness(90%);
+                }
+            } 
+            .close-ul {
+                position: absolute;
+                right: 25px;
+                top: 20px;
+            }
         }
     }
+}
+
+#errorMsg {
+    display: none;
 }
 
 main {
