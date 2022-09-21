@@ -58,10 +58,36 @@ header nav .search-bar #search-submit {
 header nav .search-bar #search-submit img {
   width: 32px;
 }
+header nav .tags {
+  display: flex;
+  padding-top: 2rem;
+  list-style-type: none;
+}
+header nav .tags li {
+  color: #fff;
+  text-transform: capitalize;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+header nav .tags li:last-child {
+  margin-right: 0;
+}
+header nav .tags li:hover {
+  filter: brightness(90%);
+}
+header nav .tags .ingredientTag {
+  background-color: #3282F7;
+}
+header nav .tags .ustensilTag {
+  background-color: #ED6454;
+}
+header nav .tags .deviceTag {
+  background-color: #68D9A4;
+}
 header nav .filters {
   display: flex;
-  justify-content: space-between;
-  width: 50%;
   margin-top: 4rem;
 }
 header nav .filters div {
@@ -73,20 +99,28 @@ header nav .filters div {
   font-size: 18px;
   outline: none;
   width: 170px;
+  height: 68px;
+  margin-right: 2rem;
 }
 header nav .filters div::placeholder {
   color: #fff;
 }
+header nav .filters div:last-child {
+  margin-right: 0;
+}
 header nav .filters #ingredients,
-header nav .filters .inputIngredients {
+header nav .filters .inputIngredients,
+header nav .filters .ingredients-list {
   background-color: #3282F7;
 }
 header nav .filters #devices,
-header nav .filters .inputDevices {
+header nav .filters .inputDevices,
+header nav .filters .devices-list {
   background-color: #68D9A4;
 }
 header nav .filters #ustensils,
-header nav .filters .inputUstensils {
+header nav .filters .inputUstensils,
+header nav .filters .ustensils-list {
   background-color: #ED6454;
 }
 header nav .filters input {
@@ -96,6 +130,44 @@ header nav .filters input {
 }
 header nav .filters input::placeholder {
   color: #ccc;
+}
+header nav .filters .ingredients-list,
+header nav .filters .ustensils-list,
+header nav .filters .devices-list {
+  list-style-type: none;
+  width: 700px;
+  margin-left: -1rem;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+header nav .filters .ingredients-list li,
+header nav .filters .ustensils-list li,
+header nav .filters .devices-list li {
+  width: 33%;
+  margin: 0.2rem 0;
+}
+header nav .filters .tagIngredient,
+header nav .filters .tagUstensil,
+header nav .filters .tagDevice {
+  text-transform: capitalize;
+  cursor: pointer;
+}
+header nav .filters .tagIngredient:hover,
+header nav .filters .tagUstensil:hover,
+header nav .filters .tagDevice:hover {
+  filter: brightness(90%);
+}
+header nav .filters .close-ul {
+  position: absolute;
+  right: 25px;
+  top: 20px;
+}
+
+#errorMsg {
+  display: none;
 }
 
 main {

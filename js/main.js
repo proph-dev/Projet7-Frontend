@@ -24,10 +24,10 @@ class App {
         const IngredientsSearch = new IngredientsSearchForm(this.recipesSubject, this.recipesList);
         await IngredientsSearch.build();
 
-        const UstensilsSearch = new UstensilsSearchForm(this.recipesSubject);
+        const UstensilsSearch = new UstensilsSearchForm(this.recipesSubject, this.recipesList);
         await UstensilsSearch.build();
         
-        const DevicesSearch = new DevicesSearchForm(this.recipesSubject);
+        const DevicesSearch = new DevicesSearchForm(this.recipesSubject, this.recipesList);
         await DevicesSearch.build();
 
         this.recipesList.forEach(recipe => {
@@ -43,8 +43,5 @@ app.run();
 
 /* 
 TODOLIST
-- Autocomplete les ingrédients par rapport aux recettes affichées
-- Corriger le fait que quand on écrit dans la recherche de tags les recettes disparaissent
-- Les tags actualisent pas dynamiquement les recettes quand on les ajoute, à corriger
-- Faire en sorte que le tag de filtre avancé se supprime une fois sélectionné
+- Gérer le problème où il n'y a pas de recettes
 */
