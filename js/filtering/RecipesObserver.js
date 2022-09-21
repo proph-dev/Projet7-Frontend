@@ -31,7 +31,7 @@ class RecipesObserver {
                 .filter(recipe => {
                     const tagIngredient = document.querySelector('.tags');
                     if(!tagIngredient.children) {
-                        return true;
+                        return false;
                     }
                     for(let tag of tagIngredient.children) {
                         var tagContent = tag.textContent;
