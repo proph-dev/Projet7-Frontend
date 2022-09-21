@@ -4,6 +4,7 @@ class AbstractSearchForm {
         this.wrapper = document.querySelector('.filters');
         this.tags = document.querySelector('.tags');
 
+
         this._defaultRecipes = defaultRecipes;
     }
 }
